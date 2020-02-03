@@ -1,0 +1,24 @@
+-------------------------------------------------------------------------------
+Test set: com.miage.altea.pokemon_type.api.repository.PokemonRepositoryImplTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 1, Errors: 4, Skipped: 0, Time elapsed: 1.138 s <<< FAILURE! - in com.miage.altea.pokemon_type.api.repository.PokemonRepositoryImplTest
+findAllPokemonType_shouldReturn151Pokemons  Time elapsed: 0.004 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: not <null>
+	at com.miage.altea.pokemon_type.api.repository.PokemonRepositoryImplTest.findAllPokemonType_shouldReturn151Pokemons(PokemonRepositoryImplTest.java:47)
+
+findPokemonTypeById_with25_shouldReturnPikachu  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.miage.altea.pokemon_type.api.repository.PokemonRepositoryImplTest.findPokemonTypeById_with25_shouldReturnPikachu(PokemonRepositoryImplTest.java:14)
+
+findPokemonTypeByName_withEevee_shouldReturnEevee  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.miage.altea.pokemon_type.api.repository.PokemonRepositoryImplTest.findPokemonTypeByName_withEevee_shouldReturnEevee(PokemonRepositoryImplTest.java:30)
+
+findPokemonTypeByName_withMewTwo_shouldReturnMewTwo  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.miage.altea.pokemon_type.api.repository.PokemonRepositoryImplTest.findPokemonTypeByName_withMewTwo_shouldReturnMewTwo(PokemonRepositoryImplTest.java:38)
+
+findPokemonTypeById_with145_shouldReturnZapdos  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.miage.altea.pokemon_type.api.repository.PokemonRepositoryImplTest.findPokemonTypeById_with145_shouldReturnZapdos(PokemonRepositoryImplTest.java:22)
+
