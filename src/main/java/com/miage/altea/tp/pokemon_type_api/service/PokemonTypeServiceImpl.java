@@ -1,24 +1,39 @@
 package com.miage.altea.tp.pokemon_type_api.service;
 
 import com.miage.altea.tp.pokemon_type_api.bo.PokemonType;
+import com.miage.altea.tp.pokemon_type_api.repository.PokemonTypeRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class PokemonTypeServiceImpl implements PokemonTypeService {
-    // TODO Add autowired qq part ?
-    public PokemonTypeServiceImpl(){ // TODO
 
+    public PokemonTypeRepository pokemonTypeRepository;
+
+    public PokemonTypeServiceImpl(PokemonTypeRepository pokemonTypeRepository) {
+        this.pokemonTypeRepository = pokemonTypeRepository;
     }
 
     @Override
     public PokemonType getPokemonType(int id) {
-        // TODO
+        PokemonType pokemonType = pokemonTypeRepository.findPokemonTypeById(id);
+        return pokemonType;
     }
 
     @Override
-    public List<PokemonType> getAllPokemonTypes(){
-        // TODO
+    public PokemonType getPokemonTypeByName(String name) {
+        return pokemonTypeRepository.findPokemonTypeByName(name);
     }
+
+    @Override
+    public List<PokemonType> getAllPokemonTypes() {
+        return pokemonTypeRepository.findAllPokemonType();
+    }
+
+    @Override
+    public List<PokemonType> getPokemonTypeFromTypes(List<String> types) {
+        return pokemonTypeRepository.findPokemonTypeByTypes(types);
+    }
+
 }
