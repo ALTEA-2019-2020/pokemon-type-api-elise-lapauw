@@ -7,6 +7,22 @@
 	"item": [
 		{
 			"name": "get-pokemon-type-25",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "91dd196b-eabf-47c7-af71-9a2dca8b7c83",
+						"exec": [
+							"pm.test(\"Pikachu\", function () {\r",
+							"    var pikachu = pm.response.json();\r",
+							"    pm.expect(pikachu.id).to.eq(25);\r",
+							"    pm.expect(pikachu.name).to.eq(\"Pikachu\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
