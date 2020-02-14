@@ -1,4 +1,4 @@
-package com.miage.altea.pokemon_type_api.controller;
+package com.miage.altea.tp.pokemon_type_api.controller;
 
 import com.miage.altea.tp.pokemon_type_api.bo.PokemonType;
 import com.miage.altea.tp.pokemon_type_api.controller.PokemonTypeController;
@@ -14,7 +14,7 @@ import static org.mockito.Mockito.*;
 class PokemonTypeControllerTest {
 
     @Test
-    void getPokemonType_shouldCallTheService(){
+    void getPokemonType_shouldCallTheService() {
         var service = mock(PokemonTypeService.class);
         var controller = new PokemonTypeController(service);
 
@@ -30,7 +30,7 @@ class PokemonTypeControllerTest {
     }
 
     @Test
-    void getAllPokemonTypes_shouldCallTheService(){
+    void getAllPokemonTypes_shouldCallTheService() {
         var service = mock(PokemonTypeService.class);
         var controller = new PokemonTypeController(service);
 
@@ -38,8 +38,9 @@ class PokemonTypeControllerTest {
 
         verify(service).getAllPokemonTypes();
     }
+
     @Test
-    void pokemonTypeController_shouldBeAnnotated(){
+    void pokemonTypeController_shouldBeAnnotated() {
         var controllerAnnotation =
                 PokemonTypeController.class.getAnnotation(RestController.class);
         assertNotNull(controllerAnnotation);

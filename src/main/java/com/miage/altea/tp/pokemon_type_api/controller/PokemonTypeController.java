@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value="/pokemon-types")
+@RequestMapping(value = "/pokemon-types")
 public class PokemonTypeController {
 
     PokemonTypeService pokemonTypeService;
@@ -19,21 +19,21 @@ public class PokemonTypeController {
     }
 
     @GetMapping(value = "/", params = "name")
-    public PokemonType getPokemonTypeFromName(@RequestParam String name){
+    public PokemonType getPokemonTypeFromName(@RequestParam(value = "name") String name) {
         return pokemonTypeService.getPokemonTypeByName(name);
     }
 
     @GetMapping(value = "/", params = "types")
-    public List<PokemonType> getPokemonTypeFromTypes(@RequestParam List<String> types){
+    public List<PokemonType> getPokemonTypeFromTypes(@RequestParam(value = "types") List<String> types) {
         return pokemonTypeService.getPokemonTypeFromTypes(types);
     }
 
-    @GetMapping("/{id}")
-    public PokemonType getPokemonTypeFromId(@PathVariable int id){
+    @GetMapping(value = "/{id}")
+    public PokemonType getPokemonTypeFromId(@PathVariable(value = "id") int id) {
         return pokemonTypeService.getPokemonType(id);
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public List<PokemonType> getAllPokemonTypes() {
         return pokemonTypeService.getAllPokemonTypes();
     }

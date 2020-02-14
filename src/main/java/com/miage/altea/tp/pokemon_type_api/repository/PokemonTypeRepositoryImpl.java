@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.stream.Collectors;
 
 @Repository
@@ -68,5 +69,6 @@ public class PokemonTypeRepositoryImpl implements PokemonTypeRepository {
     public List<PokemonType> findPokemonTypeByTypes(List<String> types) {
         return this.pokemons.stream().filter(e -> e.getTypes().containsAll(types)).collect(Collectors.toList());
     }
+
 
 }
