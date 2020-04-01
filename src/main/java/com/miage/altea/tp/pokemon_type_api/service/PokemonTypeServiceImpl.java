@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class PokemonTypeServiceImpl implements PokemonTypeService {
@@ -32,7 +31,7 @@ public class PokemonTypeServiceImpl implements PokemonTypeService {
     }
 
     @Override
-    public Optional<PokemonType> getPokemonTypeByName(String name) {
+    public PokemonType getPokemonTypeByName(String name) {
         return pokemonTypeRepository.findPokemonTypeByName(name);
     }
 
