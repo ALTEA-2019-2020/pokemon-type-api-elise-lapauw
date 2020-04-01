@@ -18,12 +18,12 @@ public class PokemonTypeController {
         this.pokemonTypeService = pokemonTypeService;
     }
 
-    @GetMapping(value = "/", params = "name")
+    @GetMapping(value = "", params = "name")
     public PokemonType getPokemonTypeFromName(@RequestParam(value = "name") String name) {
         return pokemonTypeService.getPokemonTypeByName(name);
     }
 
-    @GetMapping(value = "/", params = "types")
+    @GetMapping(value = "", params = "types")
     public List<PokemonType> getPokemonTypeFromTypes(@RequestParam(value = "types") List<String> types) {
         return pokemonTypeService.getPokemonTypeFromTypes(types);
     }
@@ -33,7 +33,7 @@ public class PokemonTypeController {
         return pokemonTypeService.getPokemonType(id);
     }
 
-    @GetMapping(value = "/")
+    @GetMapping(value = "")
     public List<PokemonType> getAllPokemonTypes() {
         return pokemonTypeService.getAllPokemonTypes();
     }
