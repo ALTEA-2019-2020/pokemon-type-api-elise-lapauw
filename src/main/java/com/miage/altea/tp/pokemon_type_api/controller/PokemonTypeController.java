@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/pokemon-types")
@@ -19,7 +20,7 @@ public class PokemonTypeController {
     }
 
     @GetMapping(value = "", params = "name")
-    public PokemonType getPokemonTypeFromName(@RequestParam(value = "name") String name) {
+    public Optional<PokemonType> getPokemonTypeFromName(@RequestParam(value = "name") String name) {
         return pokemonTypeService.getPokemonTypeByName(name);
     }
 

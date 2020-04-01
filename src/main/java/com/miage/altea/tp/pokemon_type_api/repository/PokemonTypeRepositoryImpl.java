@@ -1,6 +1,5 @@
 package com.miage.altea.tp.pokemon_type_api.repository;
 
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.miage.altea.tp.pokemon_type_api.bo.PokemonType;
 import org.springframework.core.io.ClassPathResource;
@@ -9,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Repository
@@ -40,14 +39,8 @@ public class PokemonTypeRepositoryImpl implements PokemonTypeRepository {
     }
 
     @Override
-    public PokemonType findPokemonTypeByName(String name) {
-        System.out.println("Loading Pokemon information for Pokemon name " + name);
-        for (PokemonType type : this.pokemons) {
-            if (type.getName().equals(name)) {
-                return type;
-            }
-        }
-        return null;
+    public Optional<PokemonType> findPokemonTypeByName(String name) {
+        return this.pokemons.stream().filter(p -> p.getName().equals(name)).findFirst();
     }
 
     @Override

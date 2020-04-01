@@ -3,12 +3,12 @@ package com.miage.altea.tp.pokemon_type_api.service;
 import com.miage.altea.tp.pokemon_type_api.bo.PokemonType;
 
 import java.util.List;
-import java.util.Locale;
+import java.util.Optional;
 
 public interface PokemonTypeService {
     PokemonType getPokemonType(int id);
 
-    PokemonType getPokemonTypeByName(String name);
+    Optional<PokemonType> getPokemonTypeByName(String name);
 
     List<PokemonType> getAllPokemonTypes();
 

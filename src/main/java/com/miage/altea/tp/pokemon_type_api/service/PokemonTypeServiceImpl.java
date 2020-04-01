@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Locale;
+import java.util.Optional;
 
 @Service
 public class PokemonTypeServiceImpl implements PokemonTypeService {
@@ -32,19 +32,17 @@ public class PokemonTypeServiceImpl implements PokemonTypeService {
     }
 
     @Override
-    public PokemonType getPokemonTypeByName(String name) {
+    public Optional<PokemonType> getPokemonTypeByName(String name) {
         return pokemonTypeRepository.findPokemonTypeByName(name);
     }
 
     @Override
     public List<PokemonType> getAllPokemonTypes() {
-        //this.pokemonTypeRepository.findAllPokemonType();
         ArrayList<PokemonType> pokemonsTranslated = new ArrayList<>(pokemonTypeRepository.findAllPokemonType());
         for (PokemonType pokemonType : pokemonsTranslated ){
             pokemonType.setName(this.translationRepository.getPokemonName(pokemonType.getId(), LocaleContextHolder.getLocale()));
         }
         pokemonsTranslated.sort(Comparator.comparing(PokemonType::getId));
-        System.out.println(pokemonsTranslated);
         return pokemonsTranslated;
     }
 
@@ -62,7 +60,7 @@ public class PokemonTypeServiceImpl implements PokemonTypeService {
     }
 
 
-    @Autowired // TODO : not sure
+    @Autowired
     public void setTranslationRepository(TranslationRepository translationRepository) {
         this.translationRepository = translationRepository;
     }
