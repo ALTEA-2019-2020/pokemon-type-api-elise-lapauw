@@ -55,11 +55,6 @@ public class TranslationRepositoryImpl implements TranslationRepository {
             }
         }
         return null;
-        /*
-                return translations.get(locale).stream()
-                .filter(translation -> translation.getId() == id)
-                .findAny().get().getName();
-         */
     }
 
 }
