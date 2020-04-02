@@ -27,12 +27,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/pokemon-types/25",
-					"protocol": "http",
+					"raw": "https://pokemon-type-api-lapauw.herokuapp.com/pokemon-types/25",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"pokemon-type-api-lapauw",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"pokemon-types",
 						"25"
@@ -63,12 +64,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/pokemon-types/1",
-					"protocol": "http",
+					"raw": "https://pokemon-type-api-lapauw.herokuapp.com/pokemon-types/1",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"pokemon-type-api-lapauw",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"pokemon-types",
 						"1"
@@ -105,12 +107,13 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/pokemon-types/1",
-					"protocol": "http",
+					"raw": "https://pokemon-type-api-lapauw.herokuapp.com/pokemon-types/1",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"pokemon-type-api-lapauw",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"pokemon-types",
 						"1"
@@ -150,12 +153,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/pokemon-types",
-					"protocol": "http",
+					"raw": "https://pokemon-type-api-lapauw.herokuapp.com/pokemon-types",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"pokemon-type-api-lapauw",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"pokemon-types"
 					]
@@ -192,23 +196,35 @@
 			],
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "fr",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": "http://localhost:8080/pokemon-types?Accept-Language=fr",
-					"protocol": "http",
+					"raw": "https://pokemon-type-api-lapauw.herokuapp.com/pokemon-types",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"pokemon-type-api-lapauw",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"pokemon-types"
-					],
-					"query": [
-						{
-							"key": "Accept-Language",
-							"value": "fr"
-						}
 					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-pokemon-poison",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
 				}
 			},
 			"response": []
