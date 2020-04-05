@@ -220,11 +220,47 @@
 		},
 		{
 			"name": "get-pokemon-poison",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4337bd62-3b0f-46bf-9f4f-b7d349bc2d3f",
+						"exec": [
+							"pm.test(\"all pokemon types\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eq(33);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Bulbasaur\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].types[0]).to.eq(\"poison\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "https://pokemon-type-api-lapauw.herokuapp.com/pokemon-types?types=poison",
+					"protocol": "https",
+					"host": [
+						"pokemon-type-api-lapauw",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"pokemon-types"
+					],
+					"query": [
+						{
+							"key": "types",
+							"value": "poison"
+						}
+					]
 				}
 			},
 			"response": []
